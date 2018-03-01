@@ -6,7 +6,7 @@
 
 var menuItems = document.getElementsByClassName('navi');
 for(var i=0;i<menuItems.length;i++){
-	menuItems[i].addEventListener('mousemove', showContent);
+	menuItems[i].addEventListener('click', showContent);
 }
 
 function showContent(){
@@ -38,3 +38,23 @@ function showMenu(){
 }
 
 /*3) to the thumbs down icon that will add a count (counter) for each time the icon is clicked on.*/
+
+var thumbButton = document.getElementsByClassName('thumb');
+for (var i=0; i<thumbButton.length; i++){
+	thumbButton[i].addEventListener('click', addPoint);
+	var counterElem = document.createElement('div');
+	counterElem.className = 'point';
+	counterElem.innerHTML = null;
+	thumbButton[i].appendChild(counterElem);
+
+}
+
+function addPoint(){
+	console.log("test");
+	var countUp = this.querySelectorAll('.point')[0];
+	countUp.innerHTML++;
+
+
+/*	var count = 0;
+	point.innerHTML = count++;*/
+}
